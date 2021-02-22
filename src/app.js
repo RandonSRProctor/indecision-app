@@ -1,28 +1,38 @@
 console.log('App.js is running!')
 
-var template = (
+const app = {
+    title: 'Indecision App',
+    subtitle: 'Let me help you make up your mind',
+    options: []
+}
+
+const onFormSubmit = (event) => {
+    event.preventDefault()
+    
+    const option = event.target.elements.option.value
+
+    if (option) {
+        app.options.push(option)
+        event.target.elements.option.value = ''
+    }
+}
+
+const template = (
     <div>
-        <h1>Indecision App</h1>
-        <p>This is some info</p>
+        <h1>{app.title}</h1>
+        {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+        <p>{app.options.length}</p>
         <ol>
             <li>Item one</li>
             <li>Item two</li>
         </ol>
+        <form onSubmit={onFormSubmit}>
+            <input type="text" name="option"/>
+            <button>Add Option</button>
+        </form>
     </div>
 )
 
-var userName = 'Randy Proctor'
-var userAge = 33
-var userLocation = 'Cincinnati, OH'
-var templateTwo = (
-    <div>
-        <h1>{userName}</h1>
-        <p>Age: {userName}</p>
-        <p>Location: {userLocation}</p>
-    </div>
-)
-
-
-var appRoot = document.getElementById('app')
-
-ReactDOM.render(templateTwo, appRoot);
+const appRoot = document.getElementById('app')
+ReactDOM.render(template, appRoot)

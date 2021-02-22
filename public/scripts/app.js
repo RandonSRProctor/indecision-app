@@ -2,18 +2,45 @@
 
 console.log('App.js is running!');
 
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Let me help you make up your mind',
+    options: []
+};
+
+var onFormSubmit = function onFormSubmit(event) {
+    event.preventDefault();
+
+    var option = event.target.elements.option.value;
+
+    if (option) {
+        app.options.push(option);
+        event.target.elements.option.value = '';
+    }
+};
+
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Indecision App'
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        app.subtitle
     ),
     React.createElement(
         'p',
         null,
-        'This is some info'
+        app.options.length > 0 ? 'Here are your options' : 'No options'
+    ),
+    React.createElement(
+        'p',
+        null,
+        app.options.length
     ),
     React.createElement(
         'ol',
@@ -28,34 +55,18 @@ var template = React.createElement(
             null,
             'Item two'
         )
-    )
-);
-
-var userName = 'Randy Proctor';
-var userAge = 33;
-var userLocation = 'Cincinnati, OH';
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        userName
     ),
     React.createElement(
-        'p',
-        null,
-        'Age: ',
-        userName
-    ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        userLocation
+        'form',
+        { onSubmit: onFormSubmit },
+        React.createElement('input', { type: 'text', name: 'option' }),
+        React.createElement(
+            'button',
+            null,
+            'Add Option'
+        )
     )
 );
 
 var appRoot = document.getElementById('app');
-
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
