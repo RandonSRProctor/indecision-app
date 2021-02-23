@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('App.js is running!');
+console.log('App.js is running');
 
 var app = {
     title: 'Indecision App',
@@ -16,57 +16,71 @@ var onFormSubmit = function onFormSubmit(event) {
     if (option) {
         app.options.push(option);
         event.target.elements.option.value = '';
+        console.log(app.options);
+        render();
     }
 };
 
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        app.title
-    ),
-    app.subtitle && React.createElement(
-        'p',
-        null,
-        app.subtitle
-    ),
-    React.createElement(
-        'p',
-        null,
-        app.options.length > 0 ? 'Here are your options' : 'No options'
-    ),
-    React.createElement(
-        'p',
-        null,
-        app.options.length
-    ),
-    React.createElement(
-        'ol',
+var onRemoveAll = function onRemoveAll() {
+    app.options = [];
+    render();
+};
+
+var numbers = [55, 101, 1000];
+
+var render = function render() {
+    var template = React.createElement(
+        'div',
         null,
         React.createElement(
-            'li',
+            'h1',
             null,
-            'Item one'
+            app.title
+        ),
+        app.subtitle && React.createElement(
+            'p',
+            null,
+            app.subtitle
         ),
         React.createElement(
-            'li',
+            'p',
             null,
-            'Item two'
-        )
-    ),
-    React.createElement(
-        'form',
-        { onSubmit: onFormSubmit },
-        React.createElement('input', { type: 'text', name: 'option' }),
+            app.options.length > 0 ? 'Here are your options' : 'No options'
+        ),
+        React.createElement(
+            'p',
+            null,
+            app.options.length
+        ),
         React.createElement(
             'button',
+            { onClick: onRemoveAll },
+            'Remove All'
+        ),
+        React.createElement(
+            'ol',
             null,
-            'Add Option'
+            app.options.map(function (option) {
+                return React.createElement(
+                    'li',
+                    { key: option },
+                    option
+                );
+            })
+        ),
+        React.createElement(
+            'form',
+            { onSubmit: onFormSubmit },
+            React.createElement('input', { type: 'text', name: 'option' }),
+            React.createElement(
+                'button',
+                null,
+                'Add Option'
+            )
         )
-    )
-);
+    );
+    ReactDOM.render(template, appRoot);
+};
 
 var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+render();
