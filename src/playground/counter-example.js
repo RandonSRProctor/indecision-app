@@ -11,7 +11,10 @@ class Counter extends React.Component {
     componentDidMount() {
         const lastCountFromLocalMemoryAsString = localStorage.getItem("count")
         const lastCountFromLocalMemoryAsNumber = parseInt(lastCountFromLocalMemoryAsString, 10)
-        this.setState(() => ({count : lastCountFromLocalMemoryAsNumber}) )
+        if (!isNaN(lastCountFromLocalMemoryAsNumber)) {
+            this.setState(() => ({count : lastCountFromLocalMemoryAsNumber}) )
+        }
+        
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.count !== this.state.count) {
