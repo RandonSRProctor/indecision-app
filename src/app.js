@@ -1,3 +1,14 @@
+//install -> import -> use
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+const template = <p>testing testing 123</p>
+ReactDOM.render(template, document.getElementById('app'))
+
+
+
+
 //import './utils.js'
 
 // import subtract, { square, add } from './utils.js'
@@ -7,13 +18,13 @@
 // console.log(add(100, 23))
 // console.log(subtract(100, 81))
 
-import isSenior, {canDrink, isAdult} from './person.js'
+// import isSenior, {canDrink, isAdult} from './person.js'
 
-console.log(canDrink(21))
-console.log(canDrink(20))
+// console.log(canDrink(21))
+// console.log(canDrink(20))
 
-console.log(isAdult(18))
-console.log(isAdult(17))
+// console.log(isAdult(18))
+// console.log(isAdult(17))
 
-console.log(isSenior(65))
-console.log(isSenior(64))
+// console.log(isSenior(65))
+// console.log(isSenior(64))

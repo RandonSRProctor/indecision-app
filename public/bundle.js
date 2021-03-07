@@ -60,52 +60,16 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/******/ ({
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person_js__ = __webpack_require__(2);
-//import './utils.js'
+/***/ 16:
+/***/ (function(module, exports) {
 
-// import subtract, { square, add } from './utils.js'
-
-// console.log('app is running!')
-// console.log(square(4))
-// console.log(add(100, 23))
-// console.log(subtract(100, 81))
-
-
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](21))
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](20))
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["c" /* isAdult */](18))
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["c" /* isAdult */](17))
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["b" /* default */](65))
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["b" /* default */](64))
-
-/***/ }),
-/* 1 */,
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
-const isAdult = (age) => age >= 18
-/* harmony export (immutable) */ __webpack_exports__["c"] = isAdult;
-
-
-const canDrink = (age) => age >= 21
-
-/* harmony default export */ __webpack_exports__["b"] = ((age) => age >= 65);
-
-
+throw new Error("Module parse failed: /Users/randonsproctor/development/react-course-projects/indecision-app/src/app.js Unexpected token (6:17)\nYou may need an appropriate loader to handle this file type.\n| import ReactDOM from 'react-dom'\n| \n| const template = <p>testing testing 123</p>\n| ReactDOM.render(template, document.getElementById('app'))\n| ");
 
 /***/ })
-/******/ ]);
+
+/******/ });
