@@ -69,14 +69,23 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_utils_js__ = __webpack_require__(1);
-//import './src/utils.js'
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
+//import './utils.js'
 
 
 
 console.log('app is running!')
-console.log(__WEBPACK_IMPORTED_MODULE_0__src_utils_js__["b" /* square */](4))
-console.log(__WEBPACK_IMPORTED_MODULE_0__src_utils_js__["a" /* add */](100, 23))
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4))
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](100, 23))
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](100, 81))
+
+// import {canDrink, isAdult} from './person.js'
+
+// console.log(canDrink(21))
+// console.log(canDrink(20))
+
+// console.log(isAdult(18))
+// console.log(isAdult(17))
 
 /***/ }),
 /* 1 */
@@ -87,14 +96,16 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__src_utils_js__["a" /* add */](100, 23))
 console.log('utils.js is running!!!')
 
 const square = (x) => x * x
-/* harmony export (immutable) */ __webpack_exports__["b"] = square;
+/* harmony export (immutable) */ __webpack_exports__["c"] = square;
 
 
 let add = (a, b) => a + b
 
-add = (a, b) => a * b
+/* harmony default export */ __webpack_exports__["b"] = ((a, b) => a - b);
 
-//export { square, add }
+//export { square, add, subtract as default }
+
+
 
 /***/ })
 /******/ ]);
