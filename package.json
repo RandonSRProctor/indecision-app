@@ -10,12 +10,14 @@
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react -watch"
   },
   "dependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
     "babel-cli": "6.24.1",
-    "babel-preset-env": "1.5.2",
-    "babel-preset-react": "6.24.1",
+    "babel-loader": "^8.2.2",
     "live-server": "^1.2.1",
     "react": "^17.0.1",
-    "react-dom": "16.0.0",
+    "react-dom": "^17.0.1",
     "validator": "8.0.0",
     "webpack": "3.1.0"
   }
