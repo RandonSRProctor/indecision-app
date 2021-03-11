@@ -7,3 +7,17 @@
         "transform-class-properties"
     ]
 }
+
+/*
+
+This file is no longer necessary if I make a change to webpack.config.js
+
+Info to do so can be found at this link:
+
+https://webpack.js.org/loaders/babel-loader/
+
+I am leaving this here because I need to pick one thing to
+optimize at a time and this is still perfectly valid.
+
+
+*/
