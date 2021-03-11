@@ -86,7 +86,9 @@ class IndecisionApp extends React.Component {
                 <AddOption
                     handleAddOption={this.handleAddOption}
                 />
-                <OptionModal />
+                <OptionModal 
+                    selectedOption = {this.state.selectedOption}
+                />
             </div>
         )
     }
