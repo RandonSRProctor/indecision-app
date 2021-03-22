@@ -1,7 +1,13 @@
+// Base settings and variables
+// Must load first
 @import './base/settings';
 @import './base/base';
+
+// Component styles
+@import './components/add-option';
 @import './components/button';
 @import './components/container';
 @import './components/header';
+@import './components/modal';
 @import './components/options';
 @import './components/widget';
